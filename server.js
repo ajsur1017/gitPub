@@ -17,6 +17,10 @@ app.get('/drinks', (req, res) => {
     res.render("drinks_index.ejs", {allDrinks: drinks.map(capitalize)})
 });
 
+app.get('/drinks/:id', (req, res) => {
+    res.send(req.params.id)
+})
+
 app.listen(3000 , () => {
     console.log(`Listening on port ${port}`)
 });
